@@ -10,7 +10,6 @@
 using namespace std;
 
 
-
 namespace DiceSpace {
     class Dice_vector {
     private:
@@ -21,6 +20,8 @@ namespace DiceSpace {
     public:
 
         Dice_vector(int n);
+
+        Dice_vector(Dice_vector &vector);
 
         int get_max_size() const;
 
@@ -44,23 +45,20 @@ namespace DiceSpace {
 
         int check_for_coincidences() const;
 
-        int operator[](int value) {
-            return dice_vector[value - 1];
-        }
+        Dice_vector operator+(const Dice_vector &vector) ;
 
-        int operator*() {
-            return sum_all_dices();
-        }
+        int operator[](int value);
 
-        Dice_vector &operator+=(int value) {
-            insert_dice();
-            insert_value(value);
-            return *this;
-        }
+        int operator*();
 
-        ~Dice_vector();
+        Dice_vector &operator+=(int value);
+
     };
 }
+
+std::istream &operator>>(std::istream &istream, DiceSpace::Dice_vector &vector);
+
+std::ostream &operator<<(std::ostream &ostream, const DiceSpace::Dice_vector &vector);
 
 
 #endif //DICE_H

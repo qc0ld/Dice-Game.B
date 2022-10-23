@@ -24,6 +24,7 @@ namespace Dialog {
 
     void insert_with_value(Dice_vector &vector);
 
+    void test_operators(Dice_vector &vector);
 }
 
 #endif //DIALOG_H
