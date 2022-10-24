@@ -119,6 +119,8 @@ namespace Dialog {
         create_new_group(vector);
     }
 
+    void zalupa(int aaa);
+
     void test_operators(Dice_vector &vector) {
         void (*foo[])(Dice_vector &) = {nullptr, test1, test2, test3, test4, test5, test6, display_dice};
         while (1) {
